@@ -10,9 +10,10 @@ module.exports = {
   createDeployPlugin: function(options) {
     var DeployPlugin = BasePlugin.extend({
       name: options.name,
+      runBefore: ['ember-cli-deploy-build'],
 
-      willBuild: function(context) {
-        require(`${context.distDir}/vendor/semantic-ui/gulpfile.js`);
+      build: function(context) {
+        require(`${context.project.name()}/vendor/semantic-ui/gulpfile`);
         gulp.start('build');
       },
     });
