@@ -12,7 +12,7 @@ module.exports = {
       name: options.name,
 
       willBuild: function(context) {
-        require(`${context.deployTargett}/vendor/semantic-ui/gulpfile.js`);
+        // require(`${context.distDir}/vendor/semantic-ui/gulpfile.js`);
         gulp.start('build');
       },
     });
