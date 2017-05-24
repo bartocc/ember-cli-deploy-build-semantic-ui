@@ -57,7 +57,7 @@ describe('my new plugin', function() {
           }
         }
       };
-      return assert.isFulfilled(plugin.willBuild(context))
+      return assert.isFulfilled(plugin.build(context))
     });
   });
 });
