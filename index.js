@@ -13,8 +13,8 @@ module.exports = {
       runBefore: ['build'],
 
       build: function(context) {
-        console.log(context.project);
-        require(`${context.project.getProjectRoot()}/vendor/semantic-ui/gulpfile`);
+        // console.log(context.project);
+        require(`${context.project.root}/vendor/semantic-ui/gulpfile`);
         gulp.start('build');
       },
     });
