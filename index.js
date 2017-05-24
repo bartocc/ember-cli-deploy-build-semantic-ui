@@ -11,15 +11,10 @@ module.exports = {
     var DeployPlugin = BasePlugin.extend({
       name: options.name,
       runBefore: ['build'],
-      defaultConfig: {
-        distDir: function(context){
-          return context.distDir;
-        }
-      },
 
-      build: function() {
-        var distDir         = this.readConfig('distDir');
-        require(`${distDir}/vendor/semantic-ui/gulpfile`);
+      build: function(context) {
+        console.log(context.project.getProjectRoot());
+        require(`${context.project.getProjectRoot()}/vendor/semantic-ui/gulpfile`);
         gulp.start('build');
       },
     });
